@@ -19,8 +19,7 @@ fn abs_path(path: &str) -> Result<String, Box<dyn std::error::Error>> {
     Ok(absolute_path.to_str().unwrap().to_string())
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_signin_url() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let auth_src = AuthService::new(&conf);
@@ -29,8 +28,7 @@ async fn test_get_signin_url() {
     assert!(!url.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_signup_url() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let auth_src = AuthService::new(&conf);
@@ -39,8 +37,7 @@ async fn test_get_signup_url() {
     assert!(!url.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_user_profile_url() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let auth_src = AuthService::new(&conf);
@@ -49,8 +46,7 @@ async fn test_get_user_profile_url() {
     assert!(!url.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_my_profile_url() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let auth_src = AuthService::new(&conf);
@@ -59,8 +55,7 @@ async fn test_get_my_profile_url() {
     assert!(!url.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_and_parse_auth_tokens() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let auth_src = AuthService::new(&conf);

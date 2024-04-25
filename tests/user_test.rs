@@ -19,8 +19,7 @@ fn abs_path(path: &str) -> Result<String, Box<dyn std::error::Error>> {
     Ok(absolute_path.to_str().unwrap().to_string())
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_users() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -28,8 +27,7 @@ async fn test_get_users() {
     assert!(!users.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_sorted_users() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -40,8 +38,7 @@ async fn test_get_sorted_users() {
     assert!(!users.is_empty());
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_user_count() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -49,8 +46,7 @@ async fn test_get_user_count() {
     assert!(count == 1);
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_user() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -58,8 +54,7 @@ async fn test_get_user() {
     assert!(user.owner == "built-in");
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_get_user_with_email() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -70,8 +65,7 @@ async fn test_get_user_with_email() {
     assert!(user.email == "admin@example.com");
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_add_user() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -86,8 +80,7 @@ async fn test_add_user() {
     assert_eq!(code, 200);
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_update_user() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);
@@ -102,8 +95,7 @@ async fn test_update_user() {
     assert_eq!(code, 200);
 }
 
-#[tokio::main]
-#[test]
+#[tokio::test]
 async fn test_delete_user() {
     let conf = CasdoorConfig::from_toml(abs_path("./conf.toml").unwrap().as_str()).unwrap();
     let user_service = UserService::new(&conf);

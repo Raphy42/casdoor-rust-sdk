@@ -14,7 +14,7 @@
 
 use std::fmt::Display;
 
-use http::StatusCode;
+use reqwest::StatusCode;
 
 use crate::entity::{CasdoorConfig, CasdoorUser};
 
