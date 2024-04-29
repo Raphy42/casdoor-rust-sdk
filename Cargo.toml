@@ -18,7 +18,7 @@ reqwest = { version = "0.12.4", features = ["json", "rustls-tls"] }
 serde_json = "1.0"
 jsonwebtoken = { version = "8" }
 urlencoding = "2.1.0"
-oauth2 = { version = "4.1", features = ["rustls-tls"] }
+oauth2 = { version = "4.1", features = ["rustls-tls", "reqwest"] }
 toml = "0.8.12"
 serde_derive = "1.0"
 
